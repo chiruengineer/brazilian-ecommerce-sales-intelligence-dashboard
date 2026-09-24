@@ -43,7 +43,7 @@ The main objectives of this project are to:
 
 1. Review the cleaned dataset in `data/cleaned/Sales.csv`.
 2. Open `notebooks/ecommerce_sales_analysis.ipynb` to review the analysis and preparation workflow.
-3. Open `powerbi/ecommerce_sales_dashboard.pbix` in Power BI Desktop to interact with the report.
+3. Open `powerbi/Brazilian_E-Commerce_Sales_Intelligence_Dashboard.pbix` in Power BI Desktop to interact with the report.
 4. Use the screenshots below when viewing the project on GitHub, where `.pbix` files cannot be rendered directly.
 
 The raw and cleaned CSV files are included so the transformation from source data to dashboard-ready data can be followed.
@@ -63,7 +63,7 @@ ecommerce-sales-powerbi/
 │   └── ecommerce_sales_analysis.ipynb
 │
 ├── powerbi/
-│   └── ecommerce_sales_dashboard.pbix
+│   └── Brazilian_E-Commerce_Sales_Intelligence_Dashboard.pbix
 │
 ├── screenshots/
 │   ├── executive_dashboard.png
