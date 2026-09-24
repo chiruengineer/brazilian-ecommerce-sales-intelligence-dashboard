@@ -1,10 +1,22 @@
-# Brazilian E-Commerce Sales Analysis Dashboard
+# Brazilian E-Commerce Sales Intelligence Dashboard
+
+An end-to-end analytics portfolio project built with Python, Pandas, and Power BI using Brazilian e-commerce order data.
+
+The final report turns cleaned order data into three interactive pages for executive reporting, sales analysis, and delivery performance.
+
+## Dashboard Preview
+
+| Executive Overview | Sales Analysis | Delivery Analysis |
+| --- | --- | --- |
+| Revenue, orders, customers, and category performance | State, payment, category, and order-status analysis | Delivery time, delay, and on-time performance |
+
+Open the full-size previews in the [Dashboard Screenshots](#dashboard-screenshots) section below.
 
 ## 📊 Project Overview
 
 This project analyzes Brazilian e-commerce sales data to understand sales performance, customer behavior, product performance, payment methods, and delivery performance.
 
-The project combines **Python/Jupyter Notebook**, **Power BI**, and **GitHub** to demonstrate an end-to-end data analytics workflow, from data cleaning and analysis to dashboard creation and documentation.
+I used the notebook for data preparation and analysis, then extended the Power BI report with additional visuals, delivery-focused KPIs, and DAX measures. The result is an interactive report that can be filtered by year, category, state, order status, and payment type.
 
 ## 🎯 Project Objectives
 
@@ -26,6 +38,15 @@ The main objectives of this project are to:
 * **Power BI** – Interactive dashboard and visualization
 * **DAX** – Measures and calculations in Power BI
 * **Git & GitHub** – Version control and project sharing
+
+## ▶️ How to Use This Repository
+
+1. Review the cleaned dataset in `data/cleaned/Sales.csv`.
+2. Open `notebooks/ecommerce_sales_analysis.ipynb` to review the analysis and preparation workflow.
+3. Open `powerbi/ecommerce_sales_dashboard.pbix` in Power BI Desktop to interact with the report.
+4. Use the screenshots below when viewing the project on GitHub, where `.pbix` files cannot be rendered directly.
+
+The raw and cleaned CSV files are included so the transformation from source data to dashboard-ready data can be followed.
 
 ## 📁 Project Structure
 
@@ -113,44 +134,51 @@ Key metrics include:
 * Total Revenue
 * Total Orders
 * Total Customers
-* Total Products
 * Average Order Value
-* Total Freight
 
 Visualizations include:
 
-* Monthly Revenue Trend
-* Revenue by Product Category
-* KPI cards
-* Interactive filters
+* Revenue by year
+* Revenue by product category
+* KPI cards and interactive filters
 
-### 2. Sales & Product Analysis
+### 2. Sales Analysis
 
 This page focuses on sales, products, customers, and payment behavior.
 
 Visualizations include:
 
-* Revenue by Customer State
-* Orders by Payment Type
-* Revenue by Product Category
-* Orders by Order Status
-* Interactive filters
+* Revenue by customer state
+* Orders by payment type
+* Revenue by product category
+* Orders by order status
+* Order-status and payment-type filters
 
-### 3. Delivery & Customer Analysis
+### 3. Delivery Analysis
 
 This page focuses on order fulfillment and delivery performance.
 
 Key metrics include:
 
 * Average Delivery Days
-* Average Delivery Variance
+* Average Delivery Delay
 * Orders Delivered
 
 Visualizations include:
 
-* Orders by Order Status
-* Delivery performance metrics
-* Customer and order analysis
+* Average delivery days by customer state
+* Delivery days by category
+* Average delivery trend over time
+* On-time delivery percentage
+
+## ✨ My Work
+
+The dashboard was developed from the existing cleaned data workflow and then refined with my own reporting additions:
+
+* Added the delivery analysis page with delivery-day, delay, and on-time metrics.
+* Added extra category, state, payment, and order-status visuals for business comparison.
+* Created DAX measures for revenue, orders, customers, average order value, freight, delivery days, and delivery delay.
+* Reworked the report layout into a consistent three-page dashboard with navigation and slicers.
 
 ## 🔢 Key Power BI Measures
 
@@ -192,6 +220,20 @@ SUM(Sales[freight_value])
 
 Additional delivery measures were created to analyze average delivery time and delivery performance.
 
+Representative delivery measures include:
+
+```DAX
+Average Delivery Days =
+AVERAGE(Sales[delivery_days])
+```
+
+```DAX
+Average Delivery Delay =
+AVERAGE(Sales[delivery_delay_days])
+```
+
+These measures support the delivery KPI cards, trend visual, state comparison, and on-time delivery visual shown in the report.
+
 ## 💡 Key Findings
 
 The analysis provides several useful observations about the e-commerce business:
@@ -212,13 +254,13 @@ These findings can help understand sales performance, customer behavior, and ope
 
 ![Executive Overview](screenshots/executive_dashboard.png)
 
-### Sales & Product Analysis
+### Sales Analysis
 
-![Sales & Product Analysis](screenshots/sales_analysis.png)
+![Sales Analysis](screenshots/sales_analysis.png)
 
-### Delivery & Customer Analysis
+### Delivery Analysis
 
-![Delivery & Customer Analysis](screenshots/delivery_analysis.png)
+![Delivery Analysis](screenshots/delivery_analysis.png)
 
 ## 🚀 Project Workflow
 
@@ -237,14 +279,20 @@ Cleaned CSV
      ↓
 Power BI
      ↓
-DAX Measures
+DAX Measures and Report Design
      ↓
 Interactive Dashboard
      ↓
 GitHub Portfolio Project
 ```
 
-## 📚 What I Learned
+## Repository Notes
+
+* The Power BI report is the primary interactive deliverable; the screenshots provide a quick preview for GitHub visitors.
+* The notebook and CSV files are kept in their existing folders so the cleaning and dashboard workflow remain easy to follow.
+* Dashboard totals can vary if the source data, filters, or Power BI model are changed.
+
+## 📚 Skills Demonstrated
 
 Through this project, I practiced:
 
@@ -256,15 +304,16 @@ Through this project, I practiced:
 * Designing interactive Power BI dashboards
 * Using slicers and KPI cards
 * Creating business-focused visualizations
-* Organizing a data analytics project
+* Organizing a reproducible data analytics project
+* Presenting business insights for different audiences
 * Using Git and GitHub for version control
 
-## 🔮 Future Improvements
+## 🔮 Next Improvements
 
 Possible future improvements include:
 
 * Adding customer segmentation
-* Creating a more detailed seller performance analysis
+* Adding a seller performance page
 * Adding customer retention and repeat-purchase analysis
 * Adding advanced time-series analysis
 * Improving dashboard design and navigation
